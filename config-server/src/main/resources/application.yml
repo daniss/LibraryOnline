@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/daniss/config-repo  # Replace with your GitHub repository URL
+          searchPaths: '{application}'  # Load configurations based on service name
+          cloneOnStart: true  # Clone the repository when the Config Server starts
+
+server:
+  port: 8888  # Port where Config Server will run
